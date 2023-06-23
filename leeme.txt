@@ -2,6 +2,9 @@
 Sistema de votacion para prueba de diagnostico
 
 desarrollado con php version: 8.2.5,
+base de datos : Ver 15.1 Distrib 10.4.28-MariaDB
+
+
 esta desarrollado para funcionar con una base de datos local con usuario root y contraseña sa
 para la ejecucion del programa es necesario tener instalado el XAMPP 
 
