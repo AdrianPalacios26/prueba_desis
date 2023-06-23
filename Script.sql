@@ -80,6 +80,9 @@ INSERT INTO Comuna (Id_Comuna, Nombre, Id_Region) VALUES (23,'La Ligua', 6);
 INSERT INTO Comuna (Id_Comuna, Nombre, Id_Region) VALUES (24,'San Antonio', 6);
 
 
-
-
+--Insertar los Candidatos
+INSERT INTO CANDIDATO (Id_Candidato,Nombre) VALUES (1,'Gabriel Boric');
+INSERT INTO CANDIDATO (Id_Candidato,Nombre) VALUES (2,'Jorge Kast');
+INSERT INTO CANDIDATO (Id_Candidato,Nombre) VALUES (3,'Sebastian Piñera');
+INSERT INTO CANDIDATO (Id_Candidato,Nombre) VALUES (4,'Nulo');
 
