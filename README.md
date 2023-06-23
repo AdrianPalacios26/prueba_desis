@@ -1,2 +1,23 @@
 # sistema_votacion
 Sistema de votacion para prueba de diagnostico
+
+desarrollado con php version: 8.2.5,
+esta desarrollado para funcionar con una base de datos local con usuario root y contraseña sa
+para la ejecucion del programa es necesario tener instalado el XAMPP 
+
+¿De que consta la aplicacion?
+consta de 4 archivos para la correcta funcionalidad
+*index.html* que sera la pagina principal 
+*funciones.js*: son las validaciones via javascript para validar los input y que por medio de ajax traeremos la informacion de los combo
+*funciones.php*: hace la coneccion a la base de datos local con el usuario y contraseña, ademas cuenta con las funciones para poder llenar los combos
+segun los HTTPREQUEST que le mande el .js.
+*subir.php*: hace la validacion si existe el rut en la base, y ademas sube la informacion a la bd
+
+
+Ejecucion del sistema:
+para poder ejecutar el sistema necesitaremos tener instalado el XAMPP
+y cambiar la contraseña del root a "sa";
+colocar la carpeta prueba_diagnostico en el directorio "xampp\htdocs\"
+
+ejecutar en el navegador : http://localhost/prueba_diagnostico/index.html
+
