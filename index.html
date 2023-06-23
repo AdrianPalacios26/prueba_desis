@@ -1,0 +1,147 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Sistema de Votación</title>
+    <script src="funciones.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script>
+		$(document).ready(function() {
+        // Obtener los datos de las regiones mediante AJAX
+			$.ajax({
+				url: "funciones.php",
+				type: "GET",
+				async: false,
+				data: {
+					accion: "Region"
+				},
+				dataType: "json",
+				success: function(data) {
+					// Llenar el select de regiones con los datos obtenidos
+					var selectRegion = $("#region");
+					$.each(data, function(index, region) {
+						selectRegion.append($("<option></option>")
+							.attr("value", region.Id_Region)
+							.text(region.Nombre));
+					});
+				},
+				error: function() {
+					alert("Ocurrió un error al obtener las regiones.");
+				}
+			});
+        //Obtener los datos de los Candidatos 
+            $.ajax({
+				url: "funciones.php",
+				type: "GET",
+				async: false,
+				data: {
+					accion: "Candidato"
+				},
+				dataType: "json",
+				success: function(data) {
+					// Llenar el select de regiones con los datos obtenidos
+					var selectCandidato = $("#candidato");
+					$.each(data, function(index, candidato) {
+						selectCandidato.append($("<option></option>")
+							.attr("value", candidato.Id_Candidato)
+							.text(candidato.Nombre));
+					});
+				},
+				error: function() {
+					alert("Ocurrió un error al obtener las candidatos.");
+				}
+			});
+		});
+	</script>
+</head>
+<body>
+    <h1>Sistema de Votación</h1>
+    <form onsubmit="return validarFormulario()">
+		<table style="border-collapse: collapse; border: 2px solid black; background-color: #f2f2f2;">
+            <tr>
+                <td>
+                    <label for="nombre">Nombre y Apellido:</label>
+                </td>
+                <td>
+                    <input type="text" id="nombre" name="nombre">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="alias">Alias:</label>
+                </td>
+                <td>
+                    <input type="text" id="alias" name="alias">
+                </td>
+                
+            </tr>
+
+            <tr>
+                <td>
+                    <label for="rut">RUT:</label>
+                </td>
+                <td>
+                    <input type="text" id="rut" name="rut">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="email">Email:</label>
+                </td>
+                <td>
+                    <input type="text" id="email" name="email">
+                </td>
+            </tr>
+                
+            <tr>
+                <td>
+                    <label for="region">Región:</label>
+                </td>
+                <td>
+                    <select id="region" name="region" onchange="comunas()">
+                        <option value="">Seleccione una region</option>
+                    </select>
+                </td>
+                
+            </tr>
+            <tr>
+                <td>
+                    <label for="comuna">Comuna:</label>
+                </td>
+                <td>
+                    <select id="comuna" name="comuna">
+                        <option value="">Seleccione una comuna</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="candidato">Candidato:</label>
+                </td>
+                <td>
+                    <select id="candidato" name="candidato">
+                        <option value="">Seleccione un candidato</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>¿Cómo se enteró de nosotros?</label>
+                </td>
+                <td>
+                    <input type="checkbox" id="web" name="enteradoDe[]" value="Web"> Web
+                    <input type="checkbox" id="TV"  name="enteradoDe[]" value="TV"> TV
+                    <input type="checkbox" id="redes_sociales"  name="enteradoDe[]" value="Redes Sociales"> Redes Sociales
+                    <input type="checkbox" id="amigo" name="enteradoDe[]" value="Amigo"> Amigo
+                </td>
+            </tr>
+			<tr>
+                <td>
+                    <input type="submit" value="Votar">
+                </td>
+            </tr>
+        </table>		
+    </form>
+	
+</body>
+</html>
