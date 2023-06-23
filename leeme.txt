@@ -6,12 +6,14 @@ esta desarrollado para funcionar con una base de datos local con usuario root y 
 para la ejecucion del programa es necesario tener instalado el XAMPP 
 
 ¿De que consta la aplicacion?
-consta de 4 archivos para la correcta funcionalidad
+consta de 5 archivos para la correcta funcionalidad
 *index.html* que sera la pagina principal 
 *funciones.js*: son las validaciones via javascript para validar los input y que por medio de ajax traeremos la informacion de los combo
 *funciones.php*: hace la coneccion a la base de datos local con el usuario y contraseña, ademas cuenta con las funciones para poder llenar los combos
 segun los HTTPREQUEST que le mande el .js.
-*subir.php*: hace la validacion si existe el rut en la base, y ademas sube la informacion a la bd
+*subir.php*: hace la validacion si existe el rut en la base, y ademas sube la informacion a la bd.
+*Script.sql*: aqui se encuentra los script para que se usuaron para la creacion de la base de datos y las tablas 
+
 
 
 Ejecucion del sistema:
